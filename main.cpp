@@ -31,11 +31,10 @@ int main(int argc, char* argv[]){
 		"int main(){\n"
 		"\n"
 		"}";
-
+	
 	if(argc < 2){
 		cout << "No project name provided " << projectName << " created" << endl;
 		cout << "Usage: cpproject <projectname>" << endl;
-		return 0;
 	}
 
 	if(argc > 2){
