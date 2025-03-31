@@ -42,12 +42,14 @@ int main(int argc, char* argv[]){
 		cout << "Usage: cpproject <projectname>" << endl;
 		return 1;
 	}
-	
-	filesystem::create_directory(projectName);
 
+
+	// CREATING PROJECT FILES AND FOLDER
+	filesystem::create_directory(projectName);
 	ofstream cmakeFile(projectName + "/CMakeLists.txt");
 	ofstream mainFile(projectName + "/main.cpp");
 
+	//ERRROR HANDLING
 	if(!cmakeFile){
 		cout << "Something went wrong while creating the CMake file!" << endl;
 		return 5;
@@ -57,21 +59,16 @@ int main(int argc, char* argv[]){
 		cout << "Something went wrong while creating the main file!" << endl;
 		return 6;
 	}
-
-	cmakeFile << cmakeContent;
+	
+	//WRITING CHANGES TO ALREADY CREATED FILES 
+	cmakeFile << cmakeContent; 
 	cmakeFile.close();
 
 	mainFile << mainContent;
 	mainFile.close();
 
-	//if(argv[1] = "-help"){
-	//	cout << "Usage: cpproject <projectname>" << endl;
-	//	cout << "Program made by capt-jack00 on github" << endl;
-	//}
 
 }
-
-
 //ERROR CODES:
 //0 - NO_ERROR
 //1 - TOO_MUCH_ARGS
