@@ -5,10 +5,9 @@
 #include <fstream>
 #include <filesystem>
 
-using namespace std;
 
 int main(int argc, char* argv[]){
-	string projectName;
+	std::string projectName;
 	if(argc == 1){
 		projectName = "unnamedProject";
 	}
@@ -17,13 +16,13 @@ int main(int argc, char* argv[]){
 	}
 	
 
-	const string cmakeContent = 
+	const std::string cmakeContent = 
 		"cmake_minimum_required(VERSION 3.10)\n"
 		"project(" + projectName + ")\n"
 		"\n"
 		"add_executable(main main.cpp)";
 
-	const string mainContent = 
+	const std::string mainContent = 
 		"#include <iostream>\n"
 		"\n"
 		"using namespace std;\n"
@@ -33,30 +32,30 @@ int main(int argc, char* argv[]){
 		"}";
 	
 	if(argc < 2){
-		cout << "No project name provided " << projectName << " created" << endl;
-		cout << "Usage: cpproject <projectname>" << endl;
+		std::cout << "No project name provided " << projectName << " created" << std::endl;
+		std::cout << "Usage: cpproject <projectname>" << std::endl;
 	}
 
 	if(argc > 2){
-		cout << "Too much arguments!" << endl;
-		cout << "Usage: cpproject <projectname>" << endl;
+		std::cout << "Too much arguments!" << std::endl;
+		std::cout << "Usage: cpproject <projectname>" << std::endl;
 		return 1;
 	}
 
 
 	// CREATING PROJECT FILES AND FOLDER
-	filesystem::create_directory(projectName);
-	ofstream cmakeFile(projectName + "/CMakeLists.txt");
-	ofstream mainFile(projectName + "/main.cpp");
+	std::filesystem::create_directory(projectName);
+	std::ofstream cmakeFile(projectName + "/CMakeLists.txt");
+	std::ofstream mainFile(projectName + "/main.cpp");
 
 	//ERRROR HANDLING
 	if(!cmakeFile){
-		cout << "Something went wrong while creating the CMake file!" << endl;
+		std::cout << "Something went wrong while creating the CMake file!" << std::endl;
 		return 5;
 	}
 
 	if(!mainFile){
-		cout << "Something went wrong while creating the main file!" << endl;
+		std::cout << "Something went wrong while creating the main file!" << std::endl;
 		return 6;
 	}
 	
