@@ -1,0 +1,3 @@
+/home/tytus/gitLearn/build/qtpro/build/CMakeFiles/qtpro.dir
+/home/tytus/gitLearn/build/qtpro/build/CMakeFiles/edit_cache.dir
+/home/tytus/gitLearn/build/qtpro/build/CMakeFiles/rebuild_cache.dir
