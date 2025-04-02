@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/qtpro.dir/link.d CMakeFiles/qtpro.dir/main.cpp.o -o qtpro  /usr/lib/libQt5Widgets.so.5.15.16 /usr/lib/libQt5Gui.so.5.15.16 /usr/lib/libQt5Core.so.5.15.16
